@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+import Nav from '../components/nav.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Make great sandwiches at home with sndwch</title>
+	</head>
+	<body>
+		<header>
+			<a href="/" rel="home">
+				<span role="img" aria-label="hotdog">🌭</span>
+				sndwch
+			</a>
+
+			<Nav />
+		</header>
+
+		<slot />
+		<footer>
+			<p>
+				<a href="https://jason.af/links">created by Jason Lengstorf</a>
+				<a href="#frontend-masters-link"
+					>learn to build this on Frontend Masters</a
+				>
+				<a href="https://github.com/learnwithjason/astro-frontend-masters"
+					>source code</a
+				>
+			</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	header {
+		align-items: baseline;
+		background: var(--color-gray-100);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1rem;
+	}
+
+	footer {
+		font-size: 0.75rem;
+		padding: 3rem 5% 2rem;
+	}
+
+	footer p {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		justify-content: center;
+	}
+
+	footer a {
+		color: var(--color-gray-600);
+		display: block;
+	}
+
+	@media (min-width: 400px) {
+		header {
+			flex-direction: row;
+		}
+	}
+</style>

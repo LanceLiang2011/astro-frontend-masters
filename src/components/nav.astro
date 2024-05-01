@@ -1,0 +1,33 @@
+---
+const navItems = [
+	{ path: '/shop', label: 'Shop' },
+	{ path: '/blog', label: 'Blog' },
+	{ path: '/about', label: 'About' },
+];
+---
+
+<nav>
+	{navItems.map((item) => <a href={item.path}>{item.label}</a>)}
+</nav>
+
+<style>
+	a[rel='home'] {
+		color: inherit;
+		font-family: 'DynaPuff', cursive;
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	nav {
+		display: flex;
+		gap: 1rem;
+	}
+
+	nav a {
+		color: inherit;
+		font-size: 1.25rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+</style>
